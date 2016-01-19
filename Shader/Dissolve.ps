@@ -1,0 +1,17 @@
+#version 400
+
+in vec2 vUV;
+
+uniform sampler2D iTexture;
+uniform vec4 vDiffuse;
+uniform float fDissolve;
+
+out vec4 outputColor;
+
+void main(void)
+{
+	if((texture(iTexture, vUV)).r <= fDissolve && fDissolve != 0.0)
+		discard;
+
+	outputColor = vec4(vDiffuse);
+}

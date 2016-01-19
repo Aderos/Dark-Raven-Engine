@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Image">
+      <UniqueIdentifier>{ec1bd65e-cc2f-4d18-852a-39d1d2747cbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image\BMP">
+      <UniqueIdentifier>{757e9ebd-ce78-41d6-b86d-e992dfd1d73e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image\TGA">
+      <UniqueIdentifier>{d530f56e-8142-433a-9710-125274152677}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ImageTGA.h">
+      <Filter>Image\TGA</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageBMP.h">
+      <Filter>Image\BMP</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ImageTGA.cpp">
+      <Filter>Image\TGA</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageBMP.cpp">
+      <Filter>Image\BMP</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp" />
+  </ItemGroup>
+</Project>

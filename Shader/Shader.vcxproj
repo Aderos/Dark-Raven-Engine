@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Math\Math.vcxproj">
+      <Project>{4d99f201-8da1-42d6-af2e-43dab61c1f52}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenGL\OpenGL.vcxproj">
+      <Project>{0838c00c-0c47-4941-ac9a-275969a699d4}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AccelerationShader.h" />
+    <ClInclude Include="BasicShader.h" />
+    <ClInclude Include="BumpMappingShader.h" />
+    <ClInclude Include="ColorShader.h" />
+    <ClInclude Include="ComputeShader.h" />
+    <ClInclude Include="CookTorranceShader.h" />
+    <ClInclude Include="DepthShader.h" />
+    <ClInclude Include="DissolveShader.h" />
+    <ClInclude Include="FrameShader.h" />
+    <ClInclude Include="GodraysShader.h" />
+    <ClInclude Include="GroundParkShader.h" />
+    <ClInclude Include="LambertShader.h" />
+    <ClInclude Include="LambertTextureShader.h" />
+    <ClInclude Include="Object2DShader.h" />
+    <ClInclude Include="ParallaxMappingShader.h" />
+    <ClInclude Include="ParkLampShader.h" />
+    <ClInclude Include="ParkShader.h" />
+    <ClInclude Include="ParticleShader.h" />
+    <ClInclude Include="PhongShader.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderCompiler.h" />
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="ShadowBasicShader.h" />
+    <ClInclude Include="ShadowMappingShader.h" />
+    <ClInclude Include="SkyboxShader.h" />
+    <ClInclude Include="TerrainShader.h" />
+    <ClInclude Include="TessellationShader.h" />
+    <ClInclude Include="TextureShader.h" />
+    <ClInclude Include="ToonShader.h" />
+    <ClInclude Include="VertexVisualizerShader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AccelerationShader.cpp" />
+    <ClCompile Include="BasicShader.cpp" />
+    <ClCompile Include="BumpMappingShader.cpp" />
+    <ClCompile Include="ColorShader.cpp" />
+    <ClCompile Include="ComputeShader.cpp" />
+    <ClCompile Include="CookTorranceShader.cpp" />
+    <ClCompile Include="DepthShader.cpp" />
+    <ClCompile Include="DissolveShader.cpp" />
+    <ClCompile Include="FrameShader.cpp" />
+    <ClCompile Include="GodraysShader.cpp" />
+    <ClCompile Include="GroundParkShader.cpp" />
+    <ClCompile Include="LambertShader.cpp" />
+    <ClCompile Include="LambertTextureShader.cpp" />
+    <ClCompile Include="Object2DShader.cpp" />
+    <ClCompile Include="ParallaxMappingShader.cpp" />
+    <ClCompile Include="ParkLampShader.cpp" />
+    <ClCompile Include="ParkShader.cpp" />
+    <ClCompile Include="ParticleShader.cpp" />
+    <ClCompile Include="PhongShader.cpp" />
+    <ClCompile Include="ShaderCompiler.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="ShadowBasicShader.cpp" />
+    <ClCompile Include="ShadowMappingShader.cpp" />
+    <ClCompile Include="SkyboxShader.cpp" />
+    <ClCompile Include="TerrainShader.cpp" />
+    <ClCompile Include="TessellationShader.cpp" />
+    <ClCompile Include="TextureShader.cpp" />
+    <ClCompile Include="ToonShader.cpp" />
+    <ClCompile Include="VertexVisualizerShader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Acceleration.co" />
+    <None Include="Basic.vs" />
+    <None Include="BumpMapping.ps" />
+    <None Include="BumpMapping.vs" />
+    <None Include="Color.ps" />
+    <None Include="Color.vs" />
+    <None Include="Compute.co" />
+    <None Include="CookTorrance.ps" />
+    <None Include="CookTorrance.vs" />
+    <None Include="Depth.ps" />
+    <None Include="Depth.vs" />
+    <None Include="Dissolve.ps" />
+    <None Include="Dissolve.vs" />
+    <None Include="Frame.ps" />
+    <None Include="Frame.vs" />
+    <None Include="Godrays.ps" />
+    <None Include="Godrays.vs" />
+    <None Include="GroundPark.ps" />
+    <None Include="GroundPark.vs" />
+    <None Include="Lambert.ps" />
+    <None Include="Lambert.vs" />
+    <None Include="LambertTexture.gs" />
+    <None Include="LambertTexture.ps" />
+    <None Include="LambertTexture.vs" />
+    <None Include="Object2D.ps" />
+    <None Include="Object2D.vs" />
+    <None Include="ParallaxMapping.ps" />
+    <None Include="ParallaxMapping.vs" />
+    <None Include="Park.ps" />
+    <None Include="Park.vs" />
+    <None Include="ParkLamp.ps" />
+    <None Include="ParkLamp.vs" />
+    <None Include="Particle.ps" />
+    <None Include="Particle.vs" />
+    <None Include="Phong.ps" />
+    <None Include="Phong.vs" />
+    <None Include="ShadowBasic.ps" />
+    <None Include="ShadowBasic.vs" />
+    <None Include="ShadowMapping.ps" />
+    <None Include="ShadowMapping.vs" />
+    <None Include="Skybox.ps" />
+    <None Include="Skybox.vs" />
+    <None Include="Terrain.ps" />
+    <None Include="Terrain.vs" />
+    <None Include="Tessellation.evas" />
+    <None Include="Tessellation.cons" />
+    <None Include="Tessellation.ps" />
+    <None Include="Tessellation.vs" />
+    <None Include="Texture.ps" />
+    <None Include="Texture.vs" />
+    <None Include="Toon.ps" />
+    <None Include="Toon.vs" />
+    <None Include="VertexVisualizer.gs" />
+    <None Include="VertexVisualizer.ps" />
+    <None Include="VertexVisualizer.vs" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9E3BAA87-9064-492A-ABFA-841356A2F9CD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Shader</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\OpenGL;$(SolutionDir)\Common\include;$(SolutionDir)\Math;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Common\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Projects\Dark Raven Engine\Math;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

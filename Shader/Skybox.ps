@@ -1,0 +1,13 @@
+#version 400
+
+in vec3 vUV;
+
+uniform samplerCube iTexture;
+uniform float fOpacity;
+
+out vec4 outputColor;
+
+void main(void)
+{
+	outputColor = vec4(texture(iTexture, vUV).rgb, fOpacity);
+}

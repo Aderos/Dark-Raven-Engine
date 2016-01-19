@@ -1,0 +1,12 @@
+#version 400
+
+in vec2 vUV;
+
+uniform sampler2D iTexture;
+
+out vec4 outputColor;
+
+void main(void)
+{
+	outputColor = vec4(texture2D(iTexture, vUV).rgb, 1.0);
+}

@@ -1,0 +1,30 @@
+#version 400
+
+in vec2 vUV;
+in vec3 vNormal;
+in vec3 vWorld;
+in vec3 vTangent;
+in vec3 vBitangent;
+in vec3 vLightDir;
+
+uniform vec4 vAmbient;
+uniform sampler2D iTexture;
+uniform sampler2D iNormalTexture;
+
+out vec4 outputColor;
+
+vec3 CalcBumpedNormal(vec3 vNormal, vec3 vTangent, vec3 vBitangent, vec2 vUV)                                                                     
+{                      
+	vTangent = normalize(vTangent - dot(vTangent, vNormal) * vNormal);
+	mat3 TBN = mat3(vTangent, vBitangent, vNormal);
+
+	return normalize(TBN * texture(iNormalTexture, vUV).xyz * 2.0 - 1.0);
+}   
+
+void main()
+{
+	float diff = max(0.0, dot(normalize(CalcBumpedNormal(vNormal, vTangent, vBitangent, vUV)), vLightDir));
+
+	outputColor = vec4(texture(iTexture, vUV).xyz * diff, 1.0f);
+	outputColor += vAmbient;
+}

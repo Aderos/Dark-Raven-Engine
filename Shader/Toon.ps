@@ -1,0 +1,14 @@
+#version 400
+
+smooth in vec4 vVaryingNormal;
+smooth in vec3 vVaryingLightDir;
+
+out vec4 outputColor;
+
+uniform sampler1D Texture;
+
+void main(void)
+{
+	float vUV = max(0.0, dot(normalize(vVaryingNormal.xyz), vVaryingLightDir));
+	outputColor = texture(Texture, vUV);
+}

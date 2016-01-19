@@ -1,0 +1,19 @@
+#version 400
+
+in vec4 vNormal;
+in vec3 vLightDir;
+in vec2 vUV;
+in vec4 vPosition;
+
+uniform vec4 vAmbient;
+uniform sampler2D iTexture;
+
+out vec4 outputColor;
+
+void main(void)
+{
+	float diff = max(0.0, dot(vNormal.xyz, normalize(vLightDir)));
+	
+	outputColor = vec4(texture2D(iTexture, vUV).rgb * diff, 1.0f);
+	outputColor += vAmbient;
+}

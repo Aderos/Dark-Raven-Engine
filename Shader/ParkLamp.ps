@@ -1,0 +1,27 @@
+#version 400
+
+in vec4 vNormal;
+in vec3 vLightDir;
+in vec2 vUV;
+in vec4 vPosition;
+
+uniform vec4 vAmbient;
+uniform sampler2D iTexture;
+
+out vec4 outputColor;
+
+void main(void)
+{
+	float diff = max(0.0, dot(vNormal.xyz, vLightDir.xyz));
+	
+	vec4 vColor = texture2D(iTexture, vUV);
+
+	if(vColor.a <= 0.9)
+	{
+		outputColor = vec4(vColor.rgb, 1.0);
+	}
+	else
+	{
+		outputColor = vec4(vColor.rgb * diff, vColor.a);
+	}
+}

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Object2D">
+      <UniqueIdentifier>{09bf9272-fd7c-4ba2-9b5d-212f385fa4a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object3D">
+      <UniqueIdentifier>{5869fe42-3282-497d-8281-596d61312258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object3D\Model">
+      <UniqueIdentifier>{0e67ce15-7015-4d01-8d92-1b751d0b77f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object3D\Model\OBJ">
+      <UniqueIdentifier>{3d417929-d349-42f3-824e-26e51c428517}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Object2D.cpp">
+      <Filter>Object2D</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelOBJ.cpp">
+      <Filter>Object3D\Model\OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="Object3D.cpp">
+      <Filter>Object3D</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Object2D.h">
+      <Filter>Object2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Model.h">
+      <Filter>Object3D\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelOBJ.h">
+      <Filter>Object3D\Model\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="Object3D.h">
+      <Filter>Object3D</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

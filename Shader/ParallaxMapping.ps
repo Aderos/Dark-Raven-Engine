@@ -1,0 +1,189 @@
+﻿#version 400
+
+in vec2 vUV;
+in vec3 vLightTangentSpace;
+in vec3 vEyeTangentSpace;
+
+uniform sampler2D iDiffuseTexture;
+uniform sampler2D iNormalTexture;
+uniform sampler2D iHeightTexture;
+uniform vec4 vAmbient;
+uniform float fparallaxScale;
+
+out vec4 outputColor;
+
+vec3 GetNormal( vec2 coord )
+{
+	vec3 ret = texture2D(iHeightTexture, coord ).xyz;
+	ret.xy = ret.xy * 2.0 - 1.0;
+	ret.y *= -1.0;
+	return normalize( ret );
+}
+
+vec2 parallaxMapping(in vec3 V, in vec2 T, out float parallaxHeight)
+{
+   // determine required number of layers
+   const float minLayers = 10;
+   const float maxLayers = 50;
+   float numLayers = mix(maxLayers, minLayers, abs(dot(vec3(0, 0, 1), V)));
+
+   // height of each layer
+   float layerHeight = 1.0 / numLayers;
+   
+   // depth of current layer
+   float currentLayerHeight = 1.0;
+   
+   // shift of texture coordinates for each iteration
+   vec2 dtex = fparallaxScale * (-V).xy / V.z / numLayers;
+
+   // current texture coordinates
+   vec2 currentTextureCoords = T;
+
+   // depth from heightmap
+   float heightFromTexture = texture(iHeightTexture, currentTextureCoords).r;
+
+    vec2 ParallaxXY = (-V).xy/V.z * fparallaxScale;
+	vec3 ParallaxXYZ = normalize( vec3( ParallaxXY, -1.0 ) );
+
+	float minBound = 0.004;
+	float maxBound = 0.03;
+
+   // while point is above surface
+   while(heightFromTexture < currentLayerHeight)
+   {
+			
+	float Step = minBound + abs(dot(GetNormal(currentTextureCoords.st ), ParallaxXYZ ) ) * (maxBound - minBound);
+      // go to the next layer
+      currentLayerHeight += ( ParallaxXYZ.z * Step );
+
+      // shift texture coordinates along V
+      currentTextureCoords += ParallaxXYZ.xy * Step;
+      
+	  // new depth from heightmap
+      heightFromTexture = texture(iHeightTexture, currentTextureCoords).r;
+   }
+
+   ///////////////////////////////////////////////////////////
+   // Start of Relief Parallax Mapping
+
+   // decrease shift and height of layer by half
+   vec2 deltaTexCoord = dtex / 2;
+   float deltaHeight = layerHeight / 2;
+
+   // return to the mid point of previous layer
+   currentTextureCoords += deltaTexCoord;
+   currentLayerHeight -= deltaHeight;
+
+   // binary search to increase precision of Steep Paralax Mapping
+   const int numSearches = 5;
+   for(int i=0; i < numSearches; i++)
+   {
+      // decrease shift and height of layer by half
+      deltaTexCoord /= 2;
+      deltaHeight /= 2;
+
+      // new depth from heightmap
+      heightFromTexture = texture(iHeightTexture, currentTextureCoords).r;
+
+      // shift along or agains vector V
+      if(heightFromTexture > currentLayerHeight) // below the surface
+      {
+         currentTextureCoords -= deltaTexCoord;
+         currentLayerHeight += deltaHeight;
+      }
+      else // above the surface
+      {
+         currentTextureCoords += deltaTexCoord;
+         currentLayerHeight -= deltaHeight;
+      }
+   }
+
+   if(currentTextureCoords.s < 0.0 || currentTextureCoords.t < 0.0 || currentTextureCoords.s > 1.0 || currentTextureCoords.t > 1.0)
+	  discard;
+
+   // return results
+   parallaxHeight = currentLayerHeight;    
+   return currentTextureCoords;
+} 
+
+float parallaxSoftShadowMultiplier(in vec3 L, in vec2 initialTexCoord, in float initialHeight)
+{
+   float shadowMultiplier = 1;
+
+   const float minLayers = 15;
+   const float maxLayers = 30;
+
+   // calculate lighting only for surface oriented to the light source
+   if(dot(vec3(0, 0, 1), L) > 0)
+   {
+      // calculate initial parameters
+      float numSamplesUnderSurface = 0;
+      shadowMultiplier = 0;
+      float numLayers = mix(maxLayers, minLayers, abs(dot(vec3(0, 0, 1), L)));
+      float layerHeight = initialHeight / numLayers;
+      vec2 texStep = fparallaxScale * L.xy / L.z / numLayers;
+
+      // current parameters
+      float currentLayerHeight = initialHeight - layerHeight;
+      vec2 currentTextureCoords = initialTexCoord + texStep;
+      float heightFromTexture = texture(iHeightTexture, currentTextureCoords).r;
+      int stepIndex = 1;
+
+      // while point is below depth 0.0 )
+      while(currentLayerHeight > 0)
+      {
+         // if point is under the surface
+         if(heightFromTexture < currentLayerHeight)
+         {
+            // calculate partial shadowing factor
+            numSamplesUnderSurface += 1;
+            float newShadowMultiplier = (currentLayerHeight - heightFromTexture) *
+                                             (1.0 - stepIndex / numLayers);
+            shadowMultiplier = max(shadowMultiplier, newShadowMultiplier);
+         }
+
+         // offset to the next layer
+         stepIndex += 1;
+         currentLayerHeight -= layerHeight;
+         currentTextureCoords += texStep;
+         heightFromTexture = texture(iHeightTexture, currentTextureCoords).r;
+      }
+
+      // Shadowing factor should be 1 if there were no points under the surface
+      if(numSamplesUnderSurface < 1)
+      {
+         shadowMultiplier = 1;
+      }
+      else
+      {
+         shadowMultiplier = 1.0 - shadowMultiplier;
+      }
+   }
+
+   return shadowMultiplier;
+}
+
+vec4 normalMappingLighting(in vec2 T, in vec3 L, in vec3 V, float shadowMultiplier)
+{
+	vec3 N = normalize(texture(iNormalTexture, T).xyz * 2 - 1);
+	vec3 D = texture(iDiffuseTexture, T).rgb;
+
+	float amb = 0.0;
+
+	float diff = max(0.0, dot(N, L));
+
+	return vec4(D * (amb + (diff) * pow(shadowMultiplier, 4)), 1.0);
+}
+
+void main()
+{
+	vec3 V = normalize(vEyeTangentSpace);
+	vec3 L = normalize(vLightTangentSpace);
+
+	float parallaxHeight;
+	vec2 T = parallaxMapping(V, vUV, parallaxHeight);
+
+	float shadowMultiplier = parallaxSoftShadowMultiplier(L, T, parallaxHeight - 0.05);
+	
+	outputColor = normalMappingLighting(T, L, V, shadowMultiplier);
+}

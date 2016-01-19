@@ -1,0 +1,45 @@
+﻿#version 410
+
+in vec2 vUV;
+in vec2 vLPOS;
+
+uniform sampler2D iTexture;
+uniform vec3 vLight;
+
+out vec4 outputColor;
+
+vec3 Godrays(vec2 vUV, vec2 vLPOS, float density, float weight, float decay)
+{
+	//int NUM_SAMPLES = 100;
+
+	//vec2 deltaTextCoord = vec2(vUV - vLPOS);
+	//vec2 textCoo = vUV;
+	
+	//deltaTextCoord *= 1.0 / float(NUM_SAMPLES) * density;
+
+	//float illuminationDecay = 1.0;
+	//vec3 vColor = texture2D(iTexture, textCoo).rgb;
+
+	//for(int i=0; i< NUM_SAMPLES; i++)
+	//{
+	//	textCoo -= deltaTextCoord;
+	//	vec3 sam = texture2D(iTexture, textCoo).rgb;
+	//	sam *= illuminationDecay * weight;
+
+	//	vColor += sam;
+	//	illuminationDecay *= decay;
+	//}
+
+	//return vColor;
+	return texture2D(iTexture, vUV).rgb;
+}
+
+void main(void)
+{
+	//float weight = 0.58767;
+	//float density = 0.926;
+	//float exposure = 0.2;
+	//float decay = 0.96815;
+
+	//outputColor = vec4(Godrays(uv, vLight.xy, density, weight, decay), 1.0) * exposure;
+}

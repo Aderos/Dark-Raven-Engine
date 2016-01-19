@@ -1,0 +1,13 @@
+#version 430
+
+uniform sampler2D iTexture;
+
+in vec2 vUV;
+
+out vec4 outputColor;
+
+void main()
+{
+	float c = texture(iTexture, vUV).x;
+	outputColor = vec4(texture(iTexture, vUV).rgb, 1.0);
+}

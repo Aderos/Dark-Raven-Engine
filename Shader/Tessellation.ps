@@ -1,0 +1,14 @@
+#version 410
+
+in vec3 vPosition_FS;
+in vec2 vUV_FS;
+in vec3 vNormal_FS;
+
+uniform sampler2D iTexture;
+
+out vec4 outputColor;
+
+void main()
+{
+	outputColor = vec4(texture2D(iTexture, vUV_FS).rgb, 1.0f);
+}

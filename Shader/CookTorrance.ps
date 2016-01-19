@@ -1,0 +1,67 @@
+#version 330
+
+in vec3 vPosition;
+in vec3 vNormal;
+in vec3 vLightDir;
+in vec3 vEyeDir;
+in vec2 vUV;
+
+uniform vec4 vAmbient;
+uniform vec3 vSpecular;
+uniform sampler2D iTexture;
+
+out vec4 outputColor;
+
+float Geometric(float NdotH, float NdotV, float VdotH, float NdotL, float LdotH)
+{
+	float G1 = (2 * NdotH * NdotV) / VdotH;
+	float G2 = (2 * NdotH * NdotL) / LdotH;
+	return min(1.0, min(G1, G2));
+}
+
+float Fresnel(float F, float VdotH, float value)
+{
+	return (F + ((1.0 - F) * pow(1.0 - VdotH, value)));
+}
+
+float Roughness(float m, float NdotH)
+{
+	float R1 = 1.0 / (3.14 * pow(m, 2) * pow(NdotH, 4));
+	float R2 = (pow(NdotH, 2) - 1.0) / (pow(m, 2) * pow(NdotH, 2));
+	return R1 * exp(R2);
+}
+
+float Specular(float F, float G, float R, float NdotV, float NdotL)
+{
+	return (F * G * R) / (NdotV * NdotL * 3.14);
+}
+
+void main(void)
+{	
+	float NdotL = max(0.0, dot(vNormal.xyz, vLightDir));
+	float Rs = 0;
+
+	if(NdotL > 0.0)
+	{
+		float F0 = 0.5;
+		float m = 0.5;
+		float pi = 3.14159265359;
+
+		vec3 vHalfDir = normalize(vLightDir + vEyeDir);
+
+		float NdotH = max(0.0, dot(vNormal.xyz, vHalfDir));
+		float NdotV = max(0.0, dot(vNormal.xyz, vEyeDir));
+		float VdotH = max(0.0, dot(vEyeDir, vHalfDir));
+
+		float LdotH = max(0.0, dot(vHalfDir, vLightDir));
+
+		float G = Geometric(NdotH, NdotV, VdotH, NdotL, LdotH);
+		float F = Fresnel(F0, VdotH, 5);
+		float R = Roughness(m, NdotH);
+
+		Rs = Specular(F, G, R, NdotV, NdotL);
+	}
+
+	outputColor = vec4(NdotL * (vSpecular.rgb * Rs + texture2D(iTexture, vUV).rgb), 1.0);
+	outputColor += vAmbient;
+}

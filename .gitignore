@@ -1,0 +1,9 @@
+*.tlog
+*.log
+*.cache
+*.pdb
+00_Scene_Jungle/Debug/vc120.idb
+*.log
+00_Scene_Jungle/Debug/00_Scene_Jungle.log
+*.idb
+00_Scene_Jungle/Debug/main.obj

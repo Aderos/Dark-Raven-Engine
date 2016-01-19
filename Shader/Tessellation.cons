@@ -1,0 +1,45 @@
+#version 410
+
+layout(vertices = 3) out;
+
+uniform vec3 vEyePos;
+
+in vec3 vPosition_CS[];
+in vec2 vUV_CS[];
+in vec3 vNormal_CS[];
+
+out vec3 vPosition_ES[];
+out vec2 vUV_ES[];
+out vec3 vNormal_ES[];
+
+float GetTessLevel(float Distance0, float Distance1)
+{
+    float AvgDistance = (Distance0 + Distance1) / 2.0;
+
+	if (AvgDistance <= 1.0) { return 300; }
+	else if (AvgDistance <= 2.0) { return 160; }
+    else if (AvgDistance <= 3.0) { return 80.0; }
+	else if (AvgDistance <= 5.0) { return 40.0; }
+    else if (AvgDistance <= 7.0) { return 28.0; }
+	else if (AvgDistance <= 9.0) { return 14.0; }
+	else if (AvgDistance <= 11.0) { return 7.0; }
+    else { return 3.0; }
+} 
+
+void main()
+{
+    vUV_ES[gl_InvocationID]       = vUV_CS[gl_InvocationID];
+    vNormal_ES[gl_InvocationID]   = vNormal_CS[gl_InvocationID];
+    vPosition_ES[gl_InvocationID] = vPosition_CS[gl_InvocationID];
+
+    // Calculate the distance from the camera to the three control points
+    float EyeToVertexDistance0 = distance(vEyePos, vPosition_ES[0]);
+    float EyeToVertexDistance1 = distance(vEyePos, vPosition_ES[1]);
+    float EyeToVertexDistance2 = distance(vEyePos, vPosition_ES[2]);
+
+    // Calculate the tessellation levels
+    gl_TessLevelOuter[0] = GetTessLevel(EyeToVertexDistance1, EyeToVertexDistance2);
+    gl_TessLevelOuter[1] = GetTessLevel(EyeToVertexDistance2, EyeToVertexDistance0);
+    gl_TessLevelOuter[2] = GetTessLevel(EyeToVertexDistance0, EyeToVertexDistance1);
+    gl_TessLevelInner[0] = gl_TessLevelOuter[2];
+}

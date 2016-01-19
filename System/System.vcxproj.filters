@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="FPS">
+      <UniqueIdentifier>{f6ab9a00-71f1-457b-94bc-7ea9539e7123}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logo">
+      <UniqueIdentifier>{4af32636-1bff-4e85-86ef-2e66b6addd4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pipeline">
+      <UniqueIdentifier>{182ce5df-8ac7-4e35-9a00-a2581b069dd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FBO">
+      <UniqueIdentifier>{acf81489-c931-40db-b5ff-422c18035233}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Grid">
+      <UniqueIdentifier>{082e48f7-7983-42ae-9704-536dc996ea04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pivot">
+      <UniqueIdentifier>{b19678c4-7627-4b84-b400-713b6da3d96e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shadow">
+      <UniqueIdentifier>{6268c819-4c63-4dcb-84db-8998cca52d75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame">
+      <UniqueIdentifier>{d6ced90d-54b8-44d1-ad61-98b56409f32d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FramePerSecond.h">
+      <Filter>FPS</Filter>
+    </ClInclude>
+    <ClInclude Include="Logo.h">
+      <Filter>Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="Pipeline.h">
+      <Filter>Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="FBO.h">
+      <Filter>FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="Pivot.h">
+      <Filter>Pivot</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowView.h">
+      <Filter>Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="Frame.h">
+      <Filter>Frame</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FramePerSecond.cpp">
+      <Filter>FPS</Filter>
+    </ClCompile>
+    <ClCompile Include="Logo.cpp">
+      <Filter>Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="Pipeline.cpp">
+      <Filter>Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="FBO.cpp">
+      <Filter>FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Pivot.cpp">
+      <Filter>Pivot</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowView.cpp">
+      <Filter>Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="Frame.cpp">
+      <Filter>Frame</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

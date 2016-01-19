@@ -1,0 +1,37 @@
+#version 400
+
+in vec2 vUV;
+in vec3 vLightPos;
+in vec3 vNormal;
+in vec3 vPosition;
+in vec3 vLightDir;
+in vec4 ShadowCoord;
+
+uniform sampler2D iTexture;
+
+out vec4 outputColor;
+
+float CalcShadowFactor(vec3 LightSpacePos)
+{
+	vec3 ProjCoords = LightSpacePos;
+	vec2 UVCoords;
+	UVCoords.x = 0.5 * ProjCoords.x + 0.5;
+	UVCoords.y = 0.5 * ProjCoords.y + 0.5;
+	float z = 0.5 * ProjCoords.z + 0.5;
+	float Depth = texture(iTexture, UVCoords).x;
+	if (Depth < (z + 0.00001))
+		return 0.5;
+	else
+		return 1.0;
+}
+
+void main(void)
+{
+	float diff = max(0.0, dot(vNormal.xyz, normalize(vLightDir)));
+
+	float visibility = 1.0;
+	if (texture(iTexture, ShadowCoord.xy).z < ShadowCoord.z) { visibility = 0.5; }
+	
+	outputColor = vec4(vec3(0.0, 0.5, 1.0) * diff * visibility, 1.0);
+	//outputColor = vec4(CalcShadowFactor(vLightPos) * diff * vec3(0.0, 0.5, 1.0), 1.0);
+}

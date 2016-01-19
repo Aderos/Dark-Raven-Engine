@@ -1,0 +1,16 @@
+#version 400
+
+in vec2 vUV;
+
+uniform sampler2D iTexture;
+
+out vec4 outputColor;
+
+void main(void)
+{
+	float Depth = texture(iTexture, vUV).x;
+
+	Depth = 1.0 - (1.0 - Depth) * 25.0;
+
+	outputColor = vec4(Depth);
+}

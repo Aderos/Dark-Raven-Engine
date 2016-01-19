@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Compiler">
+      <UniqueIdentifier>{be4aeb49-f581-473d-ac58-a146045dd5eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{b69943ca-a9d3-4e51-8898-f62bb20bb08c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\BumpMapping">
+      <UniqueIdentifier>{a9a266b6-35a4-40dd-9de2-df456e28d8d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Color">
+      <UniqueIdentifier>{9f30452c-faa8-4ecb-bd12-b09ff794a466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\CookTorrance">
+      <UniqueIdentifier>{4d83b22a-0b55-40a8-97b4-95655b6d3e46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Dissolve">
+      <UniqueIdentifier>{b235c39a-47a8-4a68-b573-6e78c3229c88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Lambert">
+      <UniqueIdentifier>{857f98ed-1fad-43f7-801e-1cd98862a6c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Object2D">
+      <UniqueIdentifier>{b548b689-95a5-424a-8724-cc3fbe4ffd22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Phong">
+      <UniqueIdentifier>{ac923a78-b6df-4aa3-aec0-168f57a38da3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Skybox">
+      <UniqueIdentifier>{5758467e-61f2-4727-a937-de8d232a06a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Texture">
+      <UniqueIdentifier>{bbe6fffa-c673-4f78-9698-5b21bc3ced43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Toon">
+      <UniqueIdentifier>{3fd8feda-8881-4a64-82b9-d91f90a8076f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\LambertTexture">
+      <UniqueIdentifier>{9db297ec-591f-49bb-bf1d-dd43708e19ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Terrain">
+      <UniqueIdentifier>{bb405944-3390-48cf-a75d-46666fe5a7ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ParallaxMapping">
+      <UniqueIdentifier>{791506db-25f0-4acf-8b0f-2b699c225dc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ShadowMapping">
+      <UniqueIdentifier>{67316aec-7ece-4ea8-a65d-5a1ab0f1c1cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Godrays">
+      <UniqueIdentifier>{a9fdfe23-7c0a-4f00-95a4-f138f2524d0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\VertexVisualizer">
+      <UniqueIdentifier>{2c45cd34-8ed4-4f57-9273-a9f02ec63434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Park">
+      <UniqueIdentifier>{c7d427b5-4762-4d00-a6b4-00dedf0ebe9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ParkLamp">
+      <UniqueIdentifier>{bfda2fb7-9df9-40cf-b11c-007a5ee416f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Depth">
+      <UniqueIdentifier>{83cddd89-4ad9-4de2-9712-ab32d5d861c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Ground_Park">
+      <UniqueIdentifier>{6dc0a102-ecbd-4674-b573-2e6d6e4ece17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Basic">
+      <UniqueIdentifier>{7c6956db-ad46-4d99-a325-777d25c80d6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tessellation">
+      <UniqueIdentifier>{82f140c0-bda2-4c39-a74e-bd3ae43e04c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ShadowBasic">
+      <UniqueIdentifier>{f3d1a121-d960-49fa-8c99-720ed8a2bea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Compute">
+      <UniqueIdentifier>{eb30972a-404c-4a52-8027-26c73a00a3fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Frame">
+      <UniqueIdentifier>{8db60e8d-963e-4b6d-b504-4b8c51dd049a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Acceleration">
+      <UniqueIdentifier>{5b569508-1dbc-4e47-ae5a-3b4b04e6f9c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Particle">
+      <UniqueIdentifier>{6fa65599-1ed8-4d60-9eb2-41e16124da6e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ShaderCompiler.h">
+      <Filter>Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="BumpMappingShader.h">
+      <Filter>Source\BumpMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorShader.h">
+      <Filter>Source\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="CookTorranceShader.h">
+      <Filter>Source\CookTorrance</Filter>
+    </ClInclude>
+    <ClInclude Include="DissolveShader.h">
+      <Filter>Source\Dissolve</Filter>
+    </ClInclude>
+    <ClInclude Include="LambertShader.h">
+      <Filter>Source\Lambert</Filter>
+    </ClInclude>
+    <ClInclude Include="Object2DShader.h">
+      <Filter>Source\Object2D</Filter>
+    </ClInclude>
+    <ClInclude Include="PhongShader.h">
+      <Filter>Source\Phong</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyboxShader.h">
+      <Filter>Source\Skybox</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureShader.h">
+      <Filter>Source\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="ToonShader.h">
+      <Filter>Source\Toon</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="LambertTextureShader.h">
+      <Filter>Source\LambertTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainShader.h">
+      <Filter>Source\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="ParallaxMappingShader.h">
+      <Filter>Source\ParallaxMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowMappingShader.h">
+      <Filter>Source\ShadowMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="GodraysShader.h">
+      <Filter>Source\Godrays</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexVisualizerShader.h">
+      <Filter>Source\VertexVisualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="ParkShader.h">
+      <Filter>Source\Park</Filter>
+    </ClInclude>
+    <ClInclude Include="ParkLampShader.h">
+      <Filter>Source\ParkLamp</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthShader.h">
+      <Filter>Source\Depth</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundParkShader.h">
+      <Filter>Source\Ground_Park</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicShader.h">
+      <Filter>Source\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="TessellationShader.h">
+      <Filter>Source\Tessellation</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowBasicShader.h">
+      <Filter>Source\ShadowBasic</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameShader.h">
+      <Filter>Source\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputeShader.h">
+      <Filter>Source\Compute</Filter>
+    </ClInclude>
+    <ClInclude Include="AccelerationShader.h">
+      <Filter>Source\Acceleration</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleShader.h">
+      <Filter>Source\Particle</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ShaderCompiler.cpp">
+      <Filter>Compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="BumpMappingShader.cpp">
+      <Filter>Source\BumpMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorShader.cpp">
+      <Filter>Source\Color</Filter>
+    </ClCompile>
+    <ClCompile Include="CookTorranceShader.cpp">
+      <Filter>Source\CookTorrance</Filter>
+    </ClCompile>
+    <ClCompile Include="DissolveShader.cpp">
+      <Filter>Source\Dissolve</Filter>
+    </ClCompile>
+    <ClCompile Include="LambertShader.cpp">
+      <Filter>Source\Lambert</Filter>
+    </ClCompile>
+    <ClCompile Include="Object2DShader.cpp">
+      <Filter>Source\Object2D</Filter>
+    </ClCompile>
+    <ClCompile Include="PhongShader.cpp">
+      <Filter>Source\Phong</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyboxShader.cpp">
+      <Filter>Source\Skybox</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureShader.cpp">
+      <Filter>Source\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="ToonShader.cpp">
+      <Filter>Source\Toon</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="LambertTextureShader.cpp">
+      <Filter>Source\LambertTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainShader.cpp">
+      <Filter>Source\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="ParallaxMappingShader.cpp">
+      <Filter>Source\ParallaxMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowMappingShader.cpp">
+      <Filter>Source\ShadowMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="GodraysShader.cpp">
+      <Filter>Source\Godrays</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexVisualizerShader.cpp">
+      <Filter>Source\VertexVisualizer</Filter>
+    </ClCompile>
+    <ClCompile Include="ParkShader.cpp">
+      <Filter>Source\Park</Filter>
+    </ClCompile>
+    <ClCompile Include="ParkLampShader.cpp">
+      <Filter>Source\ParkLamp</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthShader.cpp">
+      <Filter>Source\Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundParkShader.cpp">
+      <Filter>Source\Ground_Park</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicShader.cpp">
+      <Filter>Source\Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="TessellationShader.cpp">
+      <Filter>Source\Tessellation</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowBasicShader.cpp">
+      <Filter>Source\ShadowBasic</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameShader.cpp">
+      <Filter>Source\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputeShader.cpp">
+      <Filter>Source\Compute</Filter>
+    </ClCompile>
+    <ClCompile Include="AccelerationShader.cpp">
+      <Filter>Source\Acceleration</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleShader.cpp">
+      <Filter>Source\Particle</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BumpMapping.ps">
+      <Filter>Source\BumpMapping</Filter>
+    </None>
+    <None Include="BumpMapping.vs">
+      <Filter>Source\BumpMapping</Filter>
+    </None>
+    <None Include="Color.ps">
+      <Filter>Source\Color</Filter>
+    </None>
+    <None Include="Color.vs">
+      <Filter>Source\Color</Filter>
+    </None>
+    <None Include="CookTorrance.ps">
+      <Filter>Source\CookTorrance</Filter>
+    </None>
+    <None Include="CookTorrance.vs">
+      <Filter>Source\CookTorrance</Filter>
+    </None>
+    <None Include="Dissolve.ps">
+      <Filter>Source\Dissolve</Filter>
+    </None>
+    <None Include="Dissolve.vs">
+      <Filter>Source\Dissolve</Filter>
+    </None>
+    <None Include="Lambert.ps">
+      <Filter>Source\Lambert</Filter>
+    </None>
+    <None Include="Lambert.vs">
+      <Filter>Source\Lambert</Filter>
+    </None>
+    <None Include="Object2D.ps">
+      <Filter>Source\Object2D</Filter>
+    </None>
+    <None Include="Object2D.vs">
+      <Filter>Source\Object2D</Filter>
+    </None>
+    <None Include="Skybox.ps">
+      <Filter>Source\Skybox</Filter>
+    </None>
+    <None Include="Skybox.vs">
+      <Filter>Source\Skybox</Filter>
+    </None>
+    <None Include="Texture.ps">
+      <Filter>Source\Texture</Filter>
+    </None>
+    <None Include="Texture.vs">
+      <Filter>Source\Texture</Filter>
+    </None>
+    <None Include="Toon.ps">
+      <Filter>Source\Toon</Filter>
+    </None>
+    <None Include="Toon.vs">
+      <Filter>Source\Toon</Filter>
+    </None>
+    <None Include="LambertTexture.ps">
+      <Filter>Source\LambertTexture</Filter>
+    </None>
+    <None Include="LambertTexture.vs">
+      <Filter>Source\LambertTexture</Filter>
+    </None>
+    <None Include="Terrain.ps">
+      <Filter>Source\Terrain</Filter>
+    </None>
+    <None Include="Terrain.vs">
+      <Filter>Source\Terrain</Filter>
+    </None>
+    <None Include="LambertTexture.gs">
+      <Filter>Source\LambertTexture</Filter>
+    </None>
+    <None Include="Phong.ps">
+      <Filter>Source\Phong</Filter>
+    </None>
+    <None Include="Phong.vs">
+      <Filter>Source\Phong</Filter>
+    </None>
+    <None Include="ParallaxMapping.ps">
+      <Filter>Source\ParallaxMapping</Filter>
+    </None>
+    <None Include="ParallaxMapping.vs">
+      <Filter>Source\ParallaxMapping</Filter>
+    </None>
+    <None Include="ShadowMapping.ps">
+      <Filter>Source\ShadowMapping</Filter>
+    </None>
+    <None Include="ShadowMapping.vs">
+      <Filter>Source\ShadowMapping</Filter>
+    </None>
+    <None Include="Godrays.vs">
+      <Filter>Source\Godrays</Filter>
+    </None>
+    <None Include="Godrays.ps">
+      <Filter>Source\Godrays</Filter>
+    </None>
+    <None Include="VertexVisualizer.gs">
+      <Filter>Source\VertexVisualizer</Filter>
+    </None>
+    <None Include="VertexVisualizer.vs">
+      <Filter>Source\VertexVisualizer</Filter>
+    </None>
+    <None Include="VertexVisualizer.ps">
+      <Filter>Source\VertexVisualizer</Filter>
+    </None>
+    <None Include="Park.vs">
+      <Filter>Source\Park</Filter>
+    </None>
+    <None Include="Park.ps">
+      <Filter>Source\Park</Filter>
+    </None>
+    <None Include="ParkLamp.vs">
+      <Filter>Source\ParkLamp</Filter>
+    </None>
+    <None Include="ParkLamp.ps">
+      <Filter>Source\ParkLamp</Filter>
+    </None>
+    <None Include="Depth.vs">
+      <Filter>Source\Depth</Filter>
+    </None>
+    <None Include="Depth.ps">
+      <Filter>Source\Depth</Filter>
+    </None>
+    <None Include="GroundPark.vs">
+      <Filter>Source\Ground_Park</Filter>
+    </None>
+    <None Include="GroundPark.ps">
+      <Filter>Source\Ground_Park</Filter>
+    </None>
+    <None Include="Basic.vs">
+      <Filter>Source\Basic</Filter>
+    </None>
+    <None Include="Tessellation.vs">
+      <Filter>Source\Tessellation</Filter>
+    </None>
+    <None Include="Tessellation.cons">
+      <Filter>Source\Tessellation</Filter>
+    </None>
+    <None Include="Tessellation.evas">
+      <Filter>Source\Tessellation</Filter>
+    </None>
+    <None Include="Tessellation.ps">
+      <Filter>Source\Tessellation</Filter>
+    </None>
+    <None Include="ShadowBasic.vs">
+      <Filter>Source\ShadowBasic</Filter>
+    </None>
+    <None Include="ShadowBasic.ps">
+      <Filter>Source\ShadowBasic</Filter>
+    </None>
+    <None Include="Frame.vs">
+      <Filter>Source\Frame</Filter>
+    </None>
+    <None Include="Frame.ps">
+      <Filter>Source\Frame</Filter>
+    </None>
+    <None Include="Compute.co">
+      <Filter>Source\Compute</Filter>
+    </None>
+    <None Include="Acceleration.co">
+      <Filter>Source\Acceleration</Filter>
+    </None>
+    <None Include="Particle.vs">
+      <Filter>Source\Particle</Filter>
+    </None>
+    <None Include="Particle.ps">
+      <Filter>Source\Particle</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,22 @@
+#version 400
+
+in vec2 vUV;
+in vec3 vNormal;
+in vec3 vTangent;
+in vec3 vBitangent;
+in vec3 vLightDir;
+
+uniform sampler2D iTexture;
+uniform sampler2D iNormalTexture;
+uniform int iSpec;
+
+out vec4 outputColor;
+
+void main()
+{
+	vec3 vReflection = normalize(reflect(-vLightDir, vNormal));
+	float spec = max(0.0, dot(vNormal, vReflection));
+    float fSpec = pow(spec, iSpec);
+
+	outputColor = vec4(texture(iTexture, vUV).xyz * fSpec, 1.0f);
+}

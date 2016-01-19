@@ -1,0 +1,22 @@
+#version 400
+
+in vec3 vNormal;
+in vec2 vUV;
+in vec3 vPosition;
+in vec3 vLightPos;
+
+uniform vec4 vAmbient;
+uniform sampler2D iTexture;
+uniform float fConstantAtt;
+uniform float fLinearAtt;
+uniform float fExpAtt;
+
+out vec4 outputColor;
+
+void main(void)
+{
+
+	float diff = max(0.0, dot(vNormal.xyz, vLightPos.xyz));
+
+	outputColor = texture2D(iTexture, vUV) * diff;
+}
